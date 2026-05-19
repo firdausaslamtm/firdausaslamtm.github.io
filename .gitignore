@@ -1,0 +1,43 @@
+cat > .gitignore << 'EOF'
+# Virtual Environment
+.venv/
+.env/
+.ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Test reports and artifacts
+allure-results/
+allure-report/
+htmlcov/
+.coverage
+artifacts/
+screen_shot/
+
+# Screenshots (if you want to keep the folder but ignore contents)
+# screen_shot/*.png
+# !screen_shot/.gitkeep
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test outputs
+report.html
+*.json
+EOF

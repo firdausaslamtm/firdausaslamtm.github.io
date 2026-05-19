@@ -133,44 +133,53 @@ if [[ $report_choice == "1" ]] || [[ $report_choice == "3" ]]; then
     fi
 fi
 
-# Handle Allure report viewing
-if [[ $report_choice == "2" ]] || [[ $report_choice == "3" ]]; then
-    echo ""
-    read -p "View Allure report? (y/n): " view_allure
-
-    if [[ $view_allure == "y" ]] || [[ $view_allure == "Y" ]]; then
-        if command -v allure &> /dev/null; then
-            echo "📊 Opening Allure report..."
-            allure serve "$ARTIFACTS_DIR/allure-results"
-        else
-            echo "❌ Allure not installed."
-            echo ""
-            echo "Install Allure with:"
-            echo "  macOS: brew install allure"
-            echo "  Linux: sudo apt-add-repository ppa:qameta/allure && sudo apt-get update && sudo apt-get install allure"
-            echo "  Windows: scoop install allure"
-            echo ""
-            echo "Raw Allure results are available in '$ARTIFACTS_DIR/allure-results/' folder"
-        fi
-    fi
-fi
-
-# Generate static Allure report (optional)
+# Handle Allure report - Clear single choice
 if [[ $report_choice == "2" ]] || [[ $report_choice == "3" ]]; then
     if command -v allure &> /dev/null; then
         echo ""
-        read -p "Generate static Allure report (can be shared)? (y/n): " gen_static
-        if [[ $gen_static == "y" ]] || [[ $gen_static == "Y" ]]; then
-            echo "📊 Generating static Allure report in $ARTIFACTS_DIR/allure-report/"
-            allure generate "$ARTIFACTS_DIR/allure-results" -o "$ARTIFACTS_DIR/allure-report" --clean
-            echo "✅ Static report generated at: $ARTIFACTS_DIR/allure-report/index.html"
+        echo "========================================="
+        echo "  Allure Report Options"
+        echo "========================================="
+        echo ""
+        echo "What would you like to do?"
+        echo "  1) View live report (temporary, auto-refresh)"
+        echo "  2) Generate static report (permanent, shareable)"
+        echo "  3) Both (view live, then generate static)"
+        echo "  4) Skip"
+        echo ""
+        read -p "Choose (1-4): " allure_choice
 
-            read -p "Open static Allure report? (y/n): " open_static
-            if [[ $open_static == "y" ]] || [[ $open_static == "Y" ]]; then
-                open "$ARTIFACTS_DIR/allure-report/index.html" 2>/dev/null || \
-                xdg-open "$ARTIFACTS_DIR/allure-report/index.html" 2>/dev/null
-            fi
-        fi
+        case $allure_choice in
+            1)
+                echo "📊 Opening live Allure report..."
+                echo "Press Ctrl+C when done viewing"
+                allure serve "$ARTIFACTS_DIR/allure-results"
+                ;;
+            2)
+                echo "📊 Generating static Allure report..."
+                allure generate "$ARTIFACTS_DIR/allure-results" -o "$ARTIFACTS_DIR/allure-report" --clean
+                echo "✅ Static report: $ARTIFACTS_DIR/allure-report/index.html"
+                open "$ARTIFACTS_DIR/allure-report/index.html" 2>/dev/null
+                ;;
+            3)
+                echo "📊 Opening live Allure report first..."
+                echo "Press Ctrl+C when done viewing, then static report will generate"
+                allure serve "$ARTIFACTS_DIR/allure-results"
+
+                echo ""
+                echo "📊 Now generating static report..."
+                allure generate "$ARTIFACTS_DIR/allure-results" -o "$ARTIFACTS_DIR/allure-report" --clean
+                echo "✅ Static report: $ARTIFACTS_DIR/allure-report/index.html"
+                open "$ARTIFACTS_DIR/allure-report/index.html" 2>/dev/null
+                ;;
+            *)
+                echo "📁 Skipping Allure report"
+                echo "Raw results saved in: $ARTIFACTS_DIR/allure-results/"
+                ;;
+        esac
+    else
+        echo "❌ Allure not installed. Install with: brew install allure"
+        echo "Raw results saved in: $ARTIFACTS_DIR/allure-results/"
     fi
 fi
 
