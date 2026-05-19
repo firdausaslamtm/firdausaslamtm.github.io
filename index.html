@@ -6,6 +6,15 @@
 <title>Ahmad Firdaus Aslam · QA Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="/image/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/image/favicon_32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/image/favicon_16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/image/favicon_180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0b0c0e">
+
 <style>
   :root {
     --bg: #0b0c0e;
@@ -45,7 +54,9 @@
   .nav-logo {
     font-family: var(--mono); font-size: 13px; color: var(--accent);
     letter-spacing: 0.04em;
+    display:flex; align-items:center; gap:10px;
   }
+  .nav-logo img { display:block; width:20px; height:20px; }
   .nav-links { display: flex; gap: 28px; }
   .nav-links a {
     font-size: 13px; color: var(--muted); text-decoration: none;
@@ -167,7 +178,6 @@
 
   /* ─── SKILLS ─── */
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .skill-group { }
   .skill-group-title { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
   .skill-item { font-size: 14px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; }
   .skill-level { font-family: var(--mono); font-size: 10px; }
@@ -227,7 +237,10 @@
 
 <!-- NAV -->
 <nav>
-  <span class="nav-logo">aslam.dev</span>
+  <span class="nav-logo">
+    <img src="/image/favicon_32.png" alt="FA logo">
+    firdaus.aslam
+  </span>
   <div class="nav-links">
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
@@ -350,7 +363,7 @@
 
     <a href="#" class="project-card">
       <div class="proj-meta">
-        <span class="proj-type">⚙️ Framework Migration</span>
+        <span class="proj-type">⚙ Framework Migration</span>
         <span class="proj-status">Completed</span>
       </div>
       <div class="proj-title">Robot Framework → Pytest Migration</div>
@@ -374,7 +387,7 @@
 
     <a href="https://github.com/firdausaslamtm" target="_blank" class="project-card">
       <div class="proj-meta">
-        <span class="proj-type">🛡️ Intel · Infrastructure</span>
+        <span class="proj-type">🛡 Intel · Infrastructure</span>
         <span class="proj-status">Completed</span>
       </div>
       <div class="proj-title">Interface Health Check Automation</div>
