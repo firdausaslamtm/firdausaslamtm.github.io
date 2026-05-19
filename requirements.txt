@@ -1,0 +1,7 @@
+# requirements.txt
+pytest==8.2.0
+playwright==1.44.0
+pytest-playwright==0.4.4
+allure-pytest==2.16.0
+pytest-html==4.2.0
+
