@@ -28,6 +28,7 @@
     --accent2: #7c6ef7;
     --accent3: #f2fa99;
     --accent4: #f06a4e;
+    --accent5: #ff6b4a;  /* Neon orange for Hands-on */
     --mono: 'DM Mono', monospace;
     --serif: 'DM Serif Display', serif;
     --sans: 'Outfit', sans-serif;
@@ -101,7 +102,8 @@
   }
   .pill.green { border-color: rgba(62,207,142,0.3); color: var(--accent); background: rgba(62,207,142,0.05); }
   .pill.purple { border-color: rgba(124,110,247,0.3); color: var(--accent2); background: rgba(124,110,247,0.05); }
-  .pill.orange { border-color: rgba(240,106,78,0.3); color: var(--accent4); background: rgba(240,106,78,0.05); }
+  .pill.red { border-color: rgba(240, 78, 78, 0.3); color: var(--accent4); background: rgba(240,106,78,0.05); }
+  .pill.orange { border-color: rgba(255,107,74,0.4); color: var(--accent5); background: rgba(255,107,74,0.08); text-shadow: 0 0 4px rgba(255,107,74,0.3); }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
@@ -170,6 +172,11 @@
     border-radius: 20px; border: 1px solid rgba(62,207,142,0.3);
     color: var(--accent); background: rgba(62,207,142,0.05);
   }
+  .proj-status.completed {
+    border-color: rgba(62,207,142,0.5);
+    color: var(--accent);
+    background: rgba(62,207,142,0.1);
+  }
   .proj-status.wip {
     border-color: rgba(242,250,153,0.45);
     color: var(--accent3);
@@ -190,12 +197,14 @@
   .lvl-advanced { color: var(--accent2); }
   .lvl-intermediate { color: var(--accent3); }
   .lvl-learning { color: var(--accent4); }
+  .lvl-hands-on { color: var(--accent5); text-shadow: 0 0 4px rgba(255,107,74,0.5); font-weight: 500; }
 
   /* ─── ROADMAP ─── */
   .roadmap { display: flex; flex-direction: column; gap: 0; }
   .road-item {
-    display: grid; grid-template-columns: 160px 1fr;
-    gap: 0 32px; padding: 32px 0; border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 0 32px; padding: 32px 0;
+    border-top: 1px solid var(--border);
     align-items: start;
   }
   .road-item:last-child { border-bottom: 1px solid var(--border); }
@@ -214,6 +223,30 @@
     text-transform: uppercase;
     white-space: nowrap;
   }
+  .completed-pill {
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(62,207,142,0.5);
+    color: var(--accent);
+    background: rgba(62,207,142,0.08);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .in-progress-pill {
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(124,110,247,0.5);
+    color: var(--accent2);
+    background: rgba(124,110,247,0.08);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
   .road-desc { font-size: 13px; color: var(--muted); }
   .road-deliverable {
     display: inline-flex; align-items: center; gap: 6px;
@@ -228,6 +261,9 @@
     font-weight: 500;
   }
   .road-deliverable a:hover { text-decoration: underline; }
+  .road-subitems { margin-top: 12px; padding-left: 16px; border-left: 1px solid var(--border); }
+  .road-subitem { font-size: 12px; color: var(--muted); padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+  .road-subitem .dot { width: 4px; height: 4px; background: var(--accent2); border-radius: 50%; display: inline-block; }
 
   /* ─── AI PROJECTS SECTION ─── */
   .ai-repos-grid {
@@ -309,16 +345,16 @@
 
 <!-- HERO -->
 <div class="hero">
-  <p class="hero-tag">QA Engineer · ISTQB Certified · Learning AI QA · Kuala Lumpur, Malaysia</p>
+  <p class="hero-tag">QA Engineer · ISTQB Certified · AI Engineer & AI QA · Kuala Lumpur, Malaysia</p>
   <h1>Ahmad Firdaus<br/><em>Aslam</em></h1>
-  <p class="hero-sub">3+ years building test automation for national payment infrastructure. Transitioning to <strong style="color:var(--text)">AI Engineering & AI Quality</strong> — building reliable RAG systems and testing the systems that test the world.</p>
+  <p class="hero-sub">3+ years building test automation for national payment infrastructure. Now building AI systems from the ground up — RAG, MCP tools, LLM apps — and learning how to test them at scale.</p>
   <div class="hero-pills">
     <span class="pill green">ISTQB Certified</span>
     <span class="pill green">Manual Testing · UAT</span>
     <span class="pill green">Pytest · Robot Framework</span>
-    <span class="pill purple">Azure OpenAI · RAG</span>
-    <span class="pill purple">MCP Server · Ollama</span>
-    <span class="pill purple">LLM Evaluation</span>
+    <span class="pill purple">LangChain · RAG</span>
+    <span class="pill purple">Chroma · Ollama</span>
+    <span class="pill purple">LLM Evaluation · MCP</span>
     <span class="pill orange">JMeter · Performance</span>
     <span class="pill">CI/CD · Docker</span>
   </div>
@@ -333,7 +369,6 @@
   <p class="section-tag">// work history</p>
   <h2>Where I've <span>shipped quality</span></h2>
   <div class="timeline">
-
     <div class="timeline-item">
       <div>
         <div class="t-date">Apr 2023 – Present</div>
@@ -356,7 +391,6 @@
         </div>
       </div>
     </div>
-
     <div class="timeline-item">
       <div>
         <div class="t-date">Apr 2022 – Mar 2023</div>
@@ -374,7 +408,6 @@
         </div>
       </div>
     </div>
-
     <div class="timeline-item">
       <div>
         <div class="t-date">Oct 2021 – Feb 2022</div>
@@ -391,11 +424,10 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- PROJECTS (completed QA + AI experiments) -->
+<!-- PROJECTS -->
 <section id="projects">
   <p class="section-tag">// projects</p>
   <h2>What I've <span>built</span></h2>
@@ -407,64 +439,54 @@
       <a href="#" class="project-card">
         <div class="proj-meta">
           <span class="proj-type">🚀 Framework Migration</span>
-          <span class="proj-status">Completed</span>
+          <span class="proj-status completed">Completed</span>
         </div>
         <div class="proj-title">PayNet: Robot Framework → Pytest Migration</div>
         <div class="proj-desc">Led migration of legacy Robot Framework suite to Pytest for EMVCo ISO flows (AReq, ARes, RReq, RRes). New suite runs 30% faster with full CI/CD integration.</div>
-        <div class="t-tags">
-          <span class="t-tag">Pytest</span><span class="t-tag">API Testing</span><span class="t-tag">GitLab CI</span><span class="t-tag">EMVCo</span>
-        </div>
+        <div class="t-tags"><span class="t-tag">Pytest</span><span class="t-tag">API Testing</span><span class="t-tag">GitLab CI</span><span class="t-tag">EMVCo</span></div>
       </a>
       <a href="#" class="project-card">
         <div class="proj-meta">
           <span class="proj-type">⚙️ Infrastructure Automation</span>
-          <span class="proj-status">Completed</span>
+          <span class="proj-status completed">Completed</span>
         </div>
         <div class="proj-title">Intel: Interface Health Check Automation</div>
         <div class="proj-desc">Built modular PowerShell framework automating health checks for Solar & Pulsar web apps. Adopted as standard practice, eliminated ad‑hoc manual effort.</div>
-        <div class="t-tags">
-          <span class="t-tag">PowerShell</span><span class="t-tag">CLI</span><span class="t-tag">Automation</span>
-        </div>
+        <div class="t-tags"><span class="t-tag">PowerShell</span><span class="t-tag">CLI</span><span class="t-tag">Automation</span></div>
       </a>
     </div>
   </div>
 
-  <!-- AI Experiments -->
+  <!-- AI Projects — All Completed -->
   <div>
-    <p style="font-family: var(--mono); font-size: 11px; color: var(--accent2); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px;">AI Experiments</p>
+    <p style="font-family: var(--mono); font-size: 11px; color: var(--accent2); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px;">AI Projects (Completed)</p>
     <div class="projects-grid">
-      <a href="https://github.com/firdausaslamtm" target="_blank" class="project-card featured">
+      <a href="https://github.com/firdausaslamtm/rag-malaysia-travel-guide" target="_blank" class="project-card featured">
         <div class="proj-meta">
-          <span class="proj-type">🤖 RAG · Azure OpenAI</span>
-          <span class="proj-status wip">In Progress</span>
+          <span class="proj-type">🇲🇾 RAG · LangChain · Ollama</span>
+          <span class="proj-status completed">✓ Completed</span>
         </div>
-        <div class="proj-title">RAG over payment docs with Azure OpenAI and Chroma</div>
-        <div class="proj-desc">Retrieval-Augmented Generation system for payment documentation using Azure OpenAI embeddings and Chroma vector store. Enables semantic search and grounded answers over internal docs.</div>
-        <div class="t-tags">
-          <span class="t-tag">Azure OpenAI</span><span class="t-tag">Chroma</span><span class="t-tag">RAG</span><span class="t-tag">Python</span>
-        </div>
+        <div class="proj-title">RAG Malaysia Travel Guide</div>
+        <div class="proj-desc">Fully local RAG chatbot for Malaysia travel information. Built with LangChain orchestration, Chroma vector store, and local LLM via Ollama (llama3). Ask about destinations, food, culture, and get grounded answers — no cloud API, runs entirely on your machine.</div>
+        <div class="t-tags"><span class="t-tag">LangChain</span><span class="t-tag">Chroma</span><span class="t-tag">Ollama</span><span class="t-tag">RAG</span><span class="t-tag">Python</span></div>
       </a>
-      <a href="https://github.com/firdausaslamtm" target="_blank" class="project-card">
+      <a href="https://github.com/firdausaslamtm/mcp-personal-assistant-server" target="_blank" class="project-card">
         <div class="proj-meta">
           <span class="proj-type">🛠️ MCP Server</span>
-          <span class="proj-status wip">In Progress</span>
+          <span class="proj-status completed">✓ Completed</span>
         </div>
         <div class="proj-title">Local MCP server for personal assistant tools</div>
         <div class="proj-desc">Local Model Context Protocol server providing time, weather, notes, and system info tools. Works with Claude Desktop and any MCP client for private assistant workflows.</div>
-        <div class="t-tags">
-          <span class="t-tag">MCP</span><span class="t-tag">Claude</span><span class="t-tag">Python</span><span class="t-tag">Tools</span>
-        </div>
+        <div class="t-tags"><span class="t-tag">MCP</span><span class="t-tag">Claude</span><span class="t-tag">Python</span><span class="t-tag">Tools</span></div>
       </a>
-      <a href="https://github.com/firdausaslamtm" target="_blank" class="project-card">
+      <a href="https://github.com/firdausaslamtm/llm-resume-tailor" target="_blank" class="project-card">
         <div class="proj-meta">
           <span class="proj-type">✍️ LLM App</span>
-          <span class="proj-status wip">In Progress</span>
+          <span class="proj-status completed">✓ Completed</span>
         </div>
         <div class="proj-title">Tailor resumes and cover letters with local LLM via Ollama</div>
         <div class="proj-desc">Private, truthful, ATS-friendly resume and cover letter tailoring to any job description using a local LLM via Ollama. No data leaves the machine.</div>
-        <div class="t-tags">
-          <span class="t-tag">Ollama</span><span class="t-tag">LLM</span><span class="t-tag">Python</span><span class="t-tag">Privacy</span>
-        </div>
+        <div class="t-tags"><span class="t-tag">Ollama</span><span class="t-tag">LLM</span><span class="t-tag">Python</span><span class="t-tag">Privacy</span></div>
       </a>
     </div>
   </div>
@@ -479,74 +501,16 @@
     All open‑source and free to explore on <a href="https://github.com" target="_blank" style="color: var(--accent);">GitHub</a>.
   </p>
   <div class="ai-repos-grid">
-    <a href="https://github.com/microsoft/ML-For-Beginners" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">🤖</span>
-      <div>
-        <div class="ai-repo-name">ML-For-Beginners (Microsoft)</div>
-        <div class="ai-repo-desc">12‑week curriculum with 26 lessons on classic machine learning</div>
-        <div class="ai-repo-tags"><span class="ai-tag">scikit-learn</span><span class="ai-tag">Python</span><span class="ai-tag">Jupyter</span></div>
-      </div>
-    </a>
-    <a href="https://github.com/fastai/fastbook" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">🧠</span>
-      <div>
-        <div class="ai-repo-name">fastbook (fastai)</div>
-        <div class="ai-repo-desc">Jupyter notebooks for the deep learning book, using PyTorch & fastai</div>
-        <div class="ai-repo-tags"><span class="ai-tag">PyTorch</span><span class="ai-tag">fastai</span><span class="ai-tag">CNN</span></div>
-      </div>
-    </a>
-    <a href="https://github.com/huggingface/transformers" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">📝</span>
-      <div>
-        <div class="ai-repo-name">Transformers (Hugging Face)</div>
-        <div class="ai-repo-desc">State‑of‑the‑art NLP: BERT, GPT, T5 – thousands of pretrained models</div>
-        <div class="ai-repo-tags"><span class="ai-tag">Transformers</span><span class="ai-tag">PyTorch</span><span class="ai-tag">spaCy</span></div>
-      </div>
-    </a>
-    <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">⚡</span>
-      <div>
-        <div class="ai-repo-name">AI-For-Beginners (Microsoft)</div>
-        <div class="ai-repo-desc">12‑week, 24‑lesson curriculum covering neural nets, vision, NLP, & ethics</div>
-        <div class="ai-repo-tags"><span class="ai-tag">TensorFlow</span><span class="ai-tag">PyTorch</span><span class="ai-tag">Deployment</span></div>
-      </div>
-    </a>
-    <a href="https://github.com/microsoft/Data-Science-For-Beginners" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">📊</span>
-      <div>
-        <div class="ai-repo-name">Data-Science-For-Beginners (Microsoft)</div>
-        <div class="ai-repo-desc">10‑week curriculum on data science, EDA, and statistics with Python</div>
-        <div class="ai-repo-tags"><span class="ai-tag">pandas</span><span class="ai-tag">matplotlib</span><span class="ai-tag">numpy</span></div>
-      </div>
-    </a>
-    <a href="https://github.com/practical-tutorials/project-based-learning" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">🐍</span>
-      <div>
-        <div class="ai-repo-name">Project-Based Learning</div>
-        <div class="ai-repo-desc">Curated list of project tutorials – build real apps in Python and more</div>
-        <div class="ai-repo-tags"><span class="ai-tag">Python</span><span class="ai-tag">Algorithms</span><span class="ai-tag">Automation</span></div>
-      </div>
-    </a>
-    <a href="https://github.com/langchain-ai/langchain" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">🔍</span>
-      <div>
-        <div class="ai-repo-name">LangChain</div>
-        <div class="ai-repo-desc">Building RAG apps, chains, and agents with LLMs – the most popular framework</div>
-        <div class="ai-repo-tags"><span class="ai-tag">RAG</span><span class="ai-tag">LangChain</span><span class="ai-tag">Vector DB</span></div>
-      </div>
-    </a>
-    <a href="https://github.com/mlabonne/llm-course" target="_blank" class="ai-repo-card">
-      <span class="ai-repo-icon">💬</span>
-      <div>
-        <div class="ai-repo-name">LLM Course (mlabonne)</div>
-        <div class="ai-repo-desc">Complete course to master Large Language Models – notebooks & articles</div>
-        <div class="ai-repo-tags"><span class="ai-tag">LLM</span><span class="ai-tag">OpenAI</span><span class="ai-tag">Prompt Engineering</span></div>
-      </div>
-    </a>
+    <a href="https://github.com/microsoft/ML-For-Beginners" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">🤖</span><div><div class="ai-repo-name">ML-For-Beginners (Microsoft)</div><div class="ai-repo-desc">12‑week curriculum with 26 lessons on classic machine learning</div><div class="ai-repo-tags"><span class="ai-tag">scikit-learn</span><span class="ai-tag">Python</span></div></div></a>
+    <a href="https://github.com/fastai/fastbook" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">🧠</span><div><div class="ai-repo-name">fastbook (fastai)</div><div class="ai-repo-desc">Jupyter notebooks for deep learning, using PyTorch & fastai</div><div class="ai-repo-tags"><span class="ai-tag">PyTorch</span><span class="ai-tag">fastai</span></div></div></a>
+    <a href="https://github.com/huggingface/transformers" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">📝</span><div><div class="ai-repo-name">Transformers (Hugging Face)</div><div class="ai-repo-desc">State‑of‑the‑art NLP: BERT, GPT, T5</div><div class="ai-repo-tags"><span class="ai-tag">Transformers</span><span class="ai-tag">PyTorch</span></div></div></a>
+    <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">⚡</span><div><div class="ai-repo-name">AI-For-Beginners (Microsoft)</div><div class="ai-repo-desc">12‑week curriculum covering neural nets, vision, NLP, & ethics</div><div class="ai-repo-tags"><span class="ai-tag">TensorFlow</span><span class="ai-tag">PyTorch</span></div></div></a>
+    <a href="https://github.com/langchain-ai/langchain" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">🔍</span><div><div class="ai-repo-name">LangChain</div><div class="ai-repo-desc">Building RAG apps, chains, and agents with LLMs</div><div class="ai-repo-tags"><span class="ai-tag">RAG</span><span class="ai-tag">LangChain</span></div></div></a>
+    <a href="https://github.com/mlabonne/llm-course" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">💬</span><div><div class="ai-repo-name">LLM Course (mlabonne)</div><div class="ai-repo-desc">Complete course to master Large Language Models</div><div class="ai-repo-tags"><span class="ai-tag">LLM</span><span class="ai-tag">Prompt Engineering</span></div></div></a>
   </div>
 </section>
 
-<!-- SKILLS -->
+<!-- SKILLS — AI Engineering set to Hands-on (Neon Orange) -->
 <section id="skills">
   <p class="section-tag">// skills</p>
   <h2>My <span>toolkit</span></h2>
@@ -563,16 +527,15 @@
       <div class="skill-item">Pytest <span class="skill-level lvl-expert">Expert</span></div>
       <div class="skill-item">Robot Framework <span class="skill-level lvl-intermediate">Intermediate</span></div>
       <div class="skill-item">Postman / API Testing <span class="skill-level lvl-expert">Expert</span></div>
-      <div class="skill-item">Playwright <span class="skill-level lvl-learning">Learning</span></div>
       <div class="skill-item">DeepEval / RAGAS <span class="skill-level lvl-learning">Learning</span></div>
     </div>
     <div class="skill-group">
       <div class="skill-group-title">AI Engineering</div>
-      <div class="skill-item">Azure OpenAI <span class="skill-level lvl-learning">Learning</span></div>
-      <div class="skill-item">Chroma / Vector DB <span class="skill-level lvl-learning">Learning</span></div>
-      <div class="skill-item">Ollama / Local LLM <span class="skill-level lvl-learning">Learning</span></div>
-      <div class="skill-item">MCP Server <span class="skill-level lvl-learning">Learning</span></div>
-      <div class="skill-item">RAG Pipelines <span class="skill-level lvl-learning">Learning</span></div>
+      <div class="skill-item">LangChain <span class="skill-level lvl-hands-on">Hands-on</span></div>
+      <div class="skill-item">Chroma / Vector DB <span class="skill-level lvl-hands-on">Hands-on</span></div>
+      <div class="skill-item">Ollama / Local LLM <span class="skill-level lvl-hands-on">Hands-on</span></div>
+      <div class="skill-item">MCP Server <span class="skill-level lvl-hands-on">Hands-on</span></div>
+      <div class="skill-item">RAG Pipelines <span class="skill-level lvl-hands-on">Hands-on</span></div>
     </div>
     <div class="skill-group">
       <div class="skill-group-title">Languages & DevOps</div>
@@ -590,39 +553,9 @@
   <p class="section-tag">// education & certifications</p>
   <h2>What I've <span>learned</span></h2>
   <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    <div class="project-card" style="flex: 1 1 280px;">
-      <h3 style="font-size:1.2rem; margin-bottom:8px;">🎓 BSc (Hons) Netcentric Computing</h3>
-      <p style="color:var(--muted); font-size:0.9rem;">Universiti Teknologi MARA (UiTM), Jasin, Melaka · Graduated 2022</p>
-      <p style="font-size:0.85rem; color:var(--accent); margin-top:8px;">🏆 Best Project & Best Presenter (FYP 2021)</p>
-    </div>
-    <div class="project-card" style="flex: 1 1 280px;">
-      <h3 style="font-size:1.2rem; margin-bottom:8px;">📜 ISTQB Certified Tester (CTFL)</h3>
-      <p style="color:var(--muted); font-size:0.9rem;">Foundation Level</p>
-      <a href="https://www.credential.net/your-istqb-badge" target="_blank" style="color:var(--accent); font-size:0.9rem; display:inline-block; margin-top:8px;">View Badge ↗</a>
-    </div>
+    <div class="project-card" style="flex: 1 1 280px;"><h3 style="font-size:1.2rem; margin-bottom:8px;">🎓 BSc (Hons) Netcentric Computing</h3><p style="color:var(--muted); font-size:0.9rem;">Universiti Teknologi MARA (UiTM), Jasin, Melaka · Graduated 2022</p><p style="font-size:0.85rem; color:var(--accent); margin-top:8px;">🏆 Best Project & Best Presenter (FYP 2021)</p></div>
+    <div class="project-card" style="flex: 1 1 280px;"><h3 style="font-size:1.2rem; margin-bottom:8px;">📜 ISTQB Certified Tester (CTFL)</h3><p style="color:var(--muted); font-size:0.9rem;">Foundation Level</p><a href="#" target="_blank" style="color:var(--accent); font-size:0.9rem; display:inline-block; margin-top:8px;">View Badge ↗</a></div>
   </div>
-  <div style="margin-top: 24px;">
-  <p style="font-family:var(--mono); color:var(--accent); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:16px;">Other Certificates</p>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-    <!-- Certificate Card -->
-    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding: 14px 16px; transition: border-color 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-      <span style="font-size:0.85rem; color:var(--text); font-weight: 400;">Intermediate Python</span>
-      <a href="#" target="_blank" style="font-size:0.75rem; color:var(--accent2); text-decoration: none; white-space: nowrap; opacity:0.8; transition: opacity 0.2s;">View ↗</a>
-    </div>
-    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding: 14px 16px; transition: border-color 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-      <span style="font-size:0.85rem; color:var(--text); font-weight: 400;">Data Science in Python</span>
-      <a href="#" target="_blank" style="font-size:0.75rem; color:var(--accent2); text-decoration: none; white-space: nowrap; opacity:0.8; transition: opacity 0.2s;">View ↗</a>
-    </div>
-    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding: 14px 16px; transition: border-color 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-      <span style="font-size:0.85rem; color:var(--text); font-weight: 400;">Network Analysis in Python</span>
-      <a href="#" target="_blank" style="font-size:0.75rem; color:var(--accent2); text-decoration: none; white-space: nowrap; opacity:0.8; transition: opacity 0.2s;">View ↗</a>
-    </div>
-    <div style="background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding: 14px 16px; transition: border-color 0.2s, transform 0.2s; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-      <span style="font-size:0.85rem; color:var(--text); font-weight: 400;">Data Vizualize with Bokeh</span>
-      <a href="#" target="_blank" style="font-size:0.75rem; color:var(--accent2); text-decoration: none; white-space: nowrap; opacity:0.8; transition: opacity 0.2s;">View ↗</a>
-    </div>
-  </div>
-</div>
 </section>
 
 <!-- ROADMAP -->
@@ -631,47 +564,66 @@
   <h2>Path to <span>AI Engineer & AI QA Expert</span></h2>
   <div class="roadmap">
     <div class="road-item">
-      <div class="road-phase">Project 1<strong>RAG System</strong></div>
+      <div class="road-phase">Phase 1 <span class="completed-pill" style="margin-top: 6px; display: inline-block;">✓ Done</span></div>
       <div>
-        <div class="road-title">RAG over payment docs with Azure OpenAI and Chroma <span class="coming-soon-pill">Coming soon</span></div>
-        <div class="road-desc">Built a retrieval-augmented generation pipeline for payment documentation. Implemented embeddings with Azure OpenAI, vector storage with Chroma, and grounding for accurate answers.</div>
-        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/RAG-Application" target="_blank">RAG-Application</a></div>
+        <div class="road-title">RAG + MCP + Local LLM Fundamentals</div>
+        <div class="road-desc">Built end-to-end local AI stack: RAG chatbot (LangChain + Chroma + Ollama), MCP server for assistant tools, and privacy-first resume tailor. Mastered retrieval, embeddings, tool use, and prompt engineering.</div>
+        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/rag-malaysia-travel-guide" target="_blank">rag-malaysia-travel-guide</a> · <a href="https://github.com/firdausaslamtm/mcp-personal-assistant-server" target="_blank">mcp-server</a> · <a href="https://github.com/firdausaslamtm/llm-resume-tailor" target="_blank">resume-tailor</a></div>
       </div>
     </div>
     <div class="road-item">
-      <div class="road-phase">Project 2<strong>MCP Tools</strong></div>
-      <div>
-        <div class="road-title">Local MCP server for personal assistant tools <span class="coming-soon-pill">Coming soon</span></div>
-        <div class="road-desc">Developed a local MCP server exposing time, weather, notes, and system info. Compatible with Claude Desktop and any MCP client for extensible assistant capabilities.</div>
-        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/AI-Projects" target="_blank">AI-Projects</a></div>
-      </div>
-    </div>
-    <div class="road-item">
-      <div class="road-phase">Project 3<strong>Local LLM App</strong></div>
-      <div>
-        <div class="road-title">Resume & cover letter tailor with Ollama <span class="coming-soon-pill">Coming soon</span></div>
-        <div class="road-desc">Created a privacy-first app that tailors resumes and cover letters to job descriptions using a local LLM via Ollama. Focus on truthfulness and ATS compatibility.</div>
-        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/LLM-Projects" target="_blank">LLM-Projects</a></div>
-      </div>
-    </div>
-    <div class="road-item">
-      <div class="road-phase">Learning<strong>ML & DL</strong></div>
+      <div class="road-phase">Phase 2 <span class="in-progress-pill" style="margin-top: 6px; display: inline-block;">In Progress</span></div>
       <div>
         <div class="road-title">Machine Learning & Deep Learning Foundations</div>
-        <div class="road-desc">Building strong foundations in ML algorithms, neural networks, and data science. Studying scikit-learn, TensorFlow, PyTorch for model training and evaluation.</div>
-        <div class="road-deliverable">
-          📁 <a href="https://github.com/firdausaslamtm/Machine-Learning" target="_blank">Machine-Learning</a> ·
-          <a href="https://github.com/firdausaslamtm/Deep-Learning" target="_blank">Deep-Learning</a> ·
-          <a href="https://github.com/firdausaslamtm/Data-Science" target="_blank">Data-Science</a>
+        <div class="road-desc">Building strong foundations in ML algorithms, neural networks, and model evaluation. Moving from "using LLMs" to "understanding how they work under the hood."</div>
+        <div class="road-subitems">
+          <div class="road-subitem"><span class="dot"></span> Linear regression, decision trees, SVM, clustering — hands-on with scikit-learn</div>
+          <div class="road-subitem"><span class="dot"></span> Neural networks from scratch: backpropagation, activation functions, optimizers</div>
+          <div class="road-subitem"><span class="dot"></span> CNNs for image classification (MNIST → CIFAR-10 → custom datasets)</div>
+          <div class="road-subitem"><span class="dot"></span> Transformers architecture: attention, positional encoding, self-attention mechanics</div>
         </div>
+        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/Machine-Learning" target="_blank">Machine-Learning</a> · <a href="https://github.com/firdausaslamtm/Deep-Learning" target="_blank">Deep-Learning</a></div>
       </div>
     </div>
     <div class="road-item">
-      <div class="road-phase">Goal<strong>Capstone</strong></div>
+      <div class="road-phase">Phase 3 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Next</span></div>
+      <div>
+        <div class="road-title">LLM Evaluation & Quality Testing</div>
+        <div class="road-desc">Bridging QA background with AI — learning to systematically evaluate LLM outputs, measure RAG quality, and build test suites for generative AI systems.</div>
+        <div class="road-subitems">
+          <div class="road-subitem"><span class="dot"></span> RAGAS / DeepEval frameworks: faithfulness, answer relevance, context recall</div>
+          <div class="road-subitem"><span class="dot"></span> LLM-as-a-judge evaluation patterns (pairwise, pointwise, rubric-based)</div>
+          <div class="road-subitem"><span class="dot"></span> Hallucination detection and mitigation strategies</div>
+          <div class="road-subitem"><span class="dot"></span> Building test harnesses for RAG pipelines (unit tests for retrieval + generation)</div>
+        </div>
+        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/LLM-Evaluation" target="_blank">LLM-Evaluation</a> (planned)</div>
+      </div>
+    </div>
+    <div class="road-item">
+      <div class="road-phase">Phase 4 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Next</span></div>
+      <div>
+        <div class="road-title">MLOps & Quality Gates for AI Systems</div>
+        <div class="road-desc">Applying DevOps principles to ML/AI — building pipelines that validate models before deployment, monitor drift, and ensure safety/quality in production.</div>
+        <div class="road-subitems">
+          <div class="road-subitem"><span class="dot"></span> Model versioning with DVC / MLflow</div>
+          <div class="road-subitem"><span class="dot"></span> Automated retraining pipelines (GitLab CI + Kubeflow / Flyte)</div>
+          <div class="road-subitem"><span class="dot"></span> Model drift detection (data drift, concept drift, prediction distribution)</div>
+          <div class="road-subitem"><span class="dot"></span> Quality gates: accuracy thresholds, fairness checks, safety classifiers</div>
+        </div>
+        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/MLOps-Quality" target="_blank">MLOps-Quality</a> (planned)</div>
+      </div>
+    </div>
+    <div class="road-item">
+      <div class="road-phase">Phase 5 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Goal</span></div>
       <div>
         <div class="road-title">Flagship AI Test Platform + Certifications</div>
-        <div class="road-desc">Combine LLM evaluation, MLOps quality gates, and safety testing into an open-source platform. Target AWS ML Specialty or ISTQB AI Testing certification. Apply to AI QA Engineer roles.</div>
-        <div class="road-deliverable">🎯 Ready for AI QA Engineer & AI Engineer roles</div>
+        <div class="road-desc">Open-source platform that combines LLM evaluation, MLOps quality gates, and safety testing for generative AI. Plus formal certifications to validate expertise.</div>
+        <div class="road-subitems">
+          <div class="road-subitem"><span class="dot"></span> 🎯 Build: AI Test Platform (evaluation harness + drift monitor + safety checker)</div>
+          <div class="road-subitem"><span class="dot"></span> 📜 AWS ML Specialty or Google Professional ML Engineer</div>
+          <div class="road-subitem"><span class="dot"></span> 📜 ISTQB AI Testing (certification for AI quality engineering)</div>
+        </div>
+        <div class="road-deliverable">🎯 Ready for AI QA Engineer / AI Engineer roles</div>
       </div>
     </div>
   </div>
@@ -682,27 +634,15 @@
   <p class="section-tag">// contact</p>
   <h2>Let's <span>connect</span></h2>
   <div class="contact-grid">
-    <a href="mailto:firdausaslamtm@gmail.com" class="contact-card">
-      <span class="contact-icon">✉</span>
-      <div><div class="contact-label">Email</div><div class="contact-value">firdausaslamtm@gmail.com</div></div>
-    </a>
-    <a href="https://www.linkedin.com/in/firdaus-aslam-" target="_blank" class="contact-card">
-      <span class="contact-icon">in</span>
-      <div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/firdaus-aslam-</div></div>
-    </a>
-    <a href="tel:+60133916708" class="contact-card">
-      <span class="contact-icon">📱</span>
-      <div><div class="contact-label">Phone</div><div class="contact-value">+6013-3916708</div></div>
-    </a>
-    <a href="https://github.com/firdausaslamtm" target="_blank" class="contact-card">
-      <span class="contact-icon">⌥</span>
-      <div><div class="contact-label">GitHub</div><div class="contact-value">github.com/firdausaslamtm</div></div>
-    </a>
+    <a href="mailto:firdausaslamtm@gmail.com" class="contact-card"><span class="contact-icon">✉</span><div><div class="contact-label">Email</div><div class="contact-value">firdausaslamtm@gmail.com</div></div></a>
+    <a href="https://www.linkedin.com/in/firdaus-aslam-" target="_blank" class="contact-card"><span class="contact-icon">in</span><div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/firdaus-aslam-</div></div></a>
+    <a href="tel:+60133916708" class="contact-card"><span class="contact-icon">📱</span><div><div class="contact-label">Phone</div><div class="contact-value">+6013-3916708</div></div></a>
+    <a href="https://github.com/firdausaslamtm" target="_blank" class="contact-card"><span class="contact-icon">⌥</span><div><div class="contact-label">GitHub</div><div class="contact-value">github.com/firdausaslamtm</div></div></a>
   </div>
 </section>
 
 <footer>
-  built by ahmad firdaus aslam · path to AI Engineer & AI QA Engineer · 2026
+  built by ahmad firdaus aslam · building toward AI Engineer & AI QA Engineer · 2026
 </footer>
 
 </body>
