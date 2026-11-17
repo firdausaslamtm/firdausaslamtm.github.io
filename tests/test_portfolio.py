@@ -58,17 +58,17 @@ def test_your_portfolio_content(page: Page):
     # Check for your name
     expect(page.locator("text=Ahmad Firdaus Aslam")).to_be_visible()
 
-    # Check for your job title - Use partial match or specific text
-    # "QA Engineer" appears twice, so use .first or more specific text
-    expect(page.locator("text=QA Engineer · Kuala Lumpur, Malaysia")).to_be_visible()
+    # Check for your job title in the hero tagline
+    expect(page.locator("text=QA Automation Engineer · ISTQB CTFL")).to_be_visible()
 
     # Check for company names
-    expect(page.locator("text=PayNet")).to_be_visible()
-    expect(page.locator("text=Hong Leong Bank")).to_be_visible()
-    expect(page.locator("text=Intel Corporation")).to_be_visible()
+    # PayNet and the location appear in several places, so use .first
+    expect(page.locator("text=PayNet").first).to_be_visible()
+    expect(page.locator("text=Hong Leong Bank").first).to_be_visible()
+    expect(page.locator("text=Intel Corporation").first).to_be_visible()
 
     # Check for location
-    expect(page.locator("text=Kuala Lumpur, Malaysia")).to_be_visible()
+    expect(page.locator("text=Kuala Lumpur, Malaysia").first).to_be_visible()
 
     print("✅ All portfolio content checks passed!")
 
@@ -85,8 +85,8 @@ def test_finding_same_element_different_ways(page: Page):
     way3 = page.get_by_text("PayNet", exact=False)
 
     # All should find the same thing
-    expect(way1).to_be_visible()
-    expect(way2).to_be_visible()
+    expect(way1.first).to_be_visible()  # PayNet appears in several sections
+    expect(way2.first).to_be_visible()
     expect(way3.first).to_be_visible()  # Use .first to avoid strict mode
 
     print("✅ All element finding methods work!")
@@ -122,7 +122,7 @@ def test_work_experience(page: Page):
 
     employers = ["PayNet", "Hong Leong Bank", "Intel Corporation"]
     for employer in employers:
-        expect(page.locator(f"text={employer}")).to_be_visible()
+        expect(page.locator(f"text={employer}").first).to_be_visible()
         print(f"  ✅ Found employer: {employer}")
 
 
@@ -137,7 +137,7 @@ def test_toolkit_items(page: Page):
         print(f"  ✅ Found tool: {tool}")
 
 
-def test_learning_roadmap(page: Page):
+def test_career_roadmap(page: Page):
     """Test roadmap phases exist"""
     page.goto("https://firdausaslamtm.github.io/")
 
@@ -145,6 +145,29 @@ def test_learning_roadmap(page: Page):
     for phase in phases:
         expect(page.locator(f"text={phase}")).to_be_visible()
         print(f"  ✅ Found phase: {phase}")
+
+
+def test_go_live_outcomes(page: Page):
+    """MyDebit and SAN outcomes are stated correctly and old figures are gone"""
+    page.goto("https://firdausaslamtm.github.io/")
+
+    content = page.content()
+    assert "500+ domestic transaction flows" in content
+    assert "August 2026" in content
+    assert "went live in 2025" in content
+
+    # Figures and wording that were on the old version of the site
+    assert "50+ domestic transaction flows" not in content
+    assert "go-live July 2026" not in content
+
+
+def test_no_ai_engineer_positioning(page: Page):
+    """The site is positioned for QA roles, not AI engineering"""
+    page.goto("https://firdausaslamtm.github.io/")
+
+    content = page.content()
+    for stale in ["AI Engineer", "LangChain", "Ollama", "k6"]:
+        assert stale not in content, f"Unexpected leftover text: {stale}"
 
 
 # ============================================================
@@ -208,7 +231,7 @@ def test_complete_page_validation(page: Page):
     print("✅ Page loaded")
 
     # Check title with exact match (your actual title)
-    expect(page).to_have_title("Ahmad Firdaus Aslam · QA Engineer")
+    expect(page).to_have_title("Ahmad Firdaus Aslam · QA Automation Engineer")
     print("✅ Title matches exactly")
 
     # Check name appears
@@ -216,16 +239,15 @@ def test_complete_page_validation(page: Page):
     print("✅ Name visible")
 
     # Check job title - Use full text
-    expect(page.locator("text=QA Engineer · Kuala Lumpur, Malaysia")).to_be_visible()
+    expect(page.locator("text=QA Automation Engineer · ISTQB CTFL")).to_be_visible()
     print("✅ Job title visible")
 
     # Check location
-    expect(page.locator("text=Kuala Lumpur, Malaysia")).to_be_visible()
+    expect(page.locator("text=Kuala Lumpur, Malaysia").first).to_be_visible()
     print("✅ Location visible")
 
     # Check employers
     employers = ["PayNet", "Hong Leong Bank", "Intel Corporation"]
     for employer in employers:
-        expect(page.locator(f"text={employer}")).to_be_visible()
+        expect(page.locator(f"text={employer}").first).to_be_visible()
         print(f"✅ Employer {employer} visible")
-

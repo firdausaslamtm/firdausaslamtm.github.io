@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Firdaus Aslam · AI Engineer & AI QA Engineer</title>
+<title>Ahmad Firdaus Aslam · QA Automation Engineer</title>
+<meta name="description" content="QA automation engineer in Kuala Lumpur, Malaysia. Pytest, Playwright, JMeter, ISO 8583. Built test automation for MyDebit and the Shared ATM Network (SAN) on PayNet's NextSwitch."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
@@ -28,7 +29,7 @@
     --accent2: #7c6ef7;
     --accent3: #f2fa99;
     --accent4: #f06a4e;
-    --accent5: #ff6b4a;  /* Neon orange for Hands-on */
+    --accent5: #ff6b4a;  /* Neon orange for performance pill */
     --mono: 'DM Mono', monospace;
     --serif: 'DM Serif Display', serif;
     --sans: 'Outfit', sans-serif;
@@ -197,7 +198,8 @@
   .lvl-advanced { color: var(--accent2); }
   .lvl-intermediate { color: var(--accent3); }
   .lvl-learning { color: var(--accent4); }
-  .lvl-hands-on { color: var(--accent5); text-shadow: 0 0 4px rgba(255,107,74,0.5); font-weight: 500; }
+  .skills-also { margin-top: 32px; font-size: 13px; color: var(--muted); }
+  .skills-also strong { color: var(--text); font-weight: 500; }
 
   /* ─── ROADMAP ─── */
   .roadmap { display: flex; flex-direction: column; gap: 0; }
@@ -265,36 +267,6 @@
   .road-subitem { font-size: 12px; color: var(--muted); padding: 4px 0; display: flex; align-items: center; gap: 8px; }
   .road-subitem .dot { width: 4px; height: 4px; background: var(--accent2); border-radius: 50%; display: inline-block; }
 
-  /* ─── AI PROJECTS SECTION ─── */
-  .ai-repos-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 32px;
-  }
-  .ai-repo-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .ai-repo-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
-  .ai-repo-icon { font-size: 20px; min-width: 28px; }
-  .ai-repo-name { font-weight: 500; font-size: 14px; margin-bottom: 4px; color: var(--text); }
-  .ai-repo-desc { font-size: 11px; color: var(--muted); line-height: 1.4; margin-bottom: 6px; }
-  .ai-repo-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-  .ai-tag {
-    font-family: var(--mono); font-size: 9px; padding: 2px 6px;
-    border-radius: 10px; background: rgba(124,110,247,0.1);
-    border: 1px solid rgba(124,110,247,0.2); color: var(--accent2);
-  }
-
   /* ─── CONTACT ─── */
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .contact-card {
@@ -318,7 +290,6 @@
     .timeline-item { grid-template-columns: 1fr; gap: 8px; }
     .projects-grid { grid-template-columns: 1fr; }
     .project-card.featured { grid-column: span 1; }
-    .ai-repos-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .road-item { grid-template-columns: 1fr; gap: 8px; }
     .contact-grid { grid-template-columns: 1fr; }
@@ -336,7 +307,6 @@
   <div class="nav-links">
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#ai-projects">AI Repos</a>
     <a href="#skills">Skills</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#contact">Contact</a>
@@ -345,17 +315,17 @@
 
 <!-- HERO -->
 <div class="hero">
-  <p class="hero-tag">QA Engineer · ISTQB Certified · AI Engineer & AI QA · Kuala Lumpur, Malaysia</p>
+  <p class="hero-tag">QA Automation Engineer · ISTQB CTFL · Payments & Banking · Kuala Lumpur, Malaysia</p>
   <h1>Ahmad Firdaus<br/><em>Aslam</em></h1>
-  <p class="hero-sub">3+ years building test automation for national payment infrastructure. Now building AI systems from the ground up — RAG, MCP tools, LLM apps — and learning how to test them at scale.</p>
+  <p class="hero-sub">I build test automation for Malaysia's national payment infrastructure. 3+ years across Pytest and Playwright suites, JMeter performance testing, and SIT/UAT in regulated environments. MyDebit and SAN are both live.</p>
   <div class="hero-pills">
-    <span class="pill green">ISTQB Certified</span>
-    <span class="pill green">Manual Testing · UAT</span>
-    <span class="pill green">Pytest · Robot Framework</span>
-    <span class="pill purple">LangChain · RAG</span>
-    <span class="pill purple">Chroma · Ollama</span>
-    <span class="pill purple">LLM Evaluation · MCP</span>
+    <span class="pill green">ISTQB CTFL</span>
+    <span class="pill green">Pytest · Playwright</span>
+    <span class="pill green">API Testing · Postman</span>
+    <span class="pill green">Robot Framework</span>
     <span class="pill orange">JMeter · Performance</span>
+    <span class="pill">ISO 8583 · EMVCo</span>
+    <span class="pill">SIT · UAT</span>
     <span class="pill">CI/CD · Docker</span>
   </div>
   <div class="hero-cta">
@@ -377,15 +347,17 @@
       <div>
         <div class="t-role">Software Quality Assurance Engineer</div>
         <ul class="t-bullets">
-          <li>Designed comprehensive manual test cases and performed exploratory & regression testing for ISO 8583 transaction flows before automation</li>
-          <li>Built full Pytest automation suite for NextSwitch — contributed to MyDebit national go-live in 2025</li>
-          <li>Leading SAN migration validation: 50+ domestic transaction flows, go-live July 2026</li>
-          <li>Reduced manual regression effort by 40% and cut 12-hour runs to under 3 hours</li>
-          <li>Executed JMeter performance + soak testing across 500+ high-volume scenarios</li>
-          <li>Managed SIT/UAT in security-regulated infrastructure; ISO 8583 transaction flows</li>
+          <li>Test automation, API and performance testing for NextSwitch, PayNet's in-house payment switch, covering MyDebit and the Shared ATM Network (SAN) on ISO 8583. Both products are now live.</li>
+          <li>Built the Pytest and Playwright automation suite for NextSwitch functional testing; MyDebit completed validation and went live in 2025</li>
+          <li>Led SAN migration automation as an individual contributor, validating 500+ domestic transaction flows; SAN went live successfully in August 2026</li>
+          <li>Designed a Pytest framework covering 500+ high-volume scenarios, cutting regression runs from 12 hours to under 3 and reducing manual regression effort by 40%</li>
+          <li>Ran JMeter performance tests to identify infrastructure bottlenecks before production release</li>
+          <li>Migrated the legacy Robot Framework suite to Pytest for EMVCo authentication flows, improving run time by 30% and integrating it with CI/CD</li>
+          <li>Managed SIT/UAT environments and synthetic test data in a security-regulated setting, supporting defect triage and release coordination</li>
         </ul>
         <div class="t-tags">
-          <span class="t-tag">Pytest</span><span class="t-tag">JMeter</span><span class="t-tag">ISO 8583</span>
+          <span class="t-tag">Pytest</span><span class="t-tag">Playwright</span><span class="t-tag">JMeter</span>
+          <span class="t-tag">API Testing</span><span class="t-tag">ISO 8583</span>
           <span class="t-tag">Docker</span><span class="t-tag">Jenkins</span><span class="t-tag">GitLab CI</span>
           <span class="t-tag">SIT/UAT</span>
         </div>
@@ -399,12 +371,13 @@
       <div>
         <div class="t-role">Software Developer</div>
         <ul class="t-bullets">
-          <li>Developed multi-language support (Java + Spring Boot) for Cambodian market expansion</li>
-          <li>Designed and executed manual test cases; functional, regression and UAT coverage</li>
-          <li>Collaborated with stakeholders during UAT to refine acceptance criteria</li>
+          <li>Designed and executed functional, regression and UAT test cases for new features on a consumer digital banking platform</li>
+          <li>Built the language-switching feature (Java, Spring Boot) for the platform's expansion into Cambodia; shipped on time</li>
+          <li>Maintained 95% unit test coverage on new features</li>
+          <li>Worked with stakeholders during UAT to refine acceptance criteria, and documented test results for test planning</li>
         </ul>
         <div class="t-tags">
-          <span class="t-tag">Java</span><span class="t-tag">Spring Boot</span><span class="t-tag">UAT</span><span class="t-tag">Manual Testing</span>
+          <span class="t-tag">Java</span><span class="t-tag">Spring Boot</span><span class="t-tag">UAT</span><span class="t-tag">Test Planning</span>
         </div>
       </div>
     </div>
@@ -416,11 +389,12 @@
       <div>
         <div class="t-role">Automation Engineer Intern</div>
         <ul class="t-bullets">
-          <li>Migrated legacy Visual Basic scripts to PowerShell — eliminated 10 hours of weekly manual effort</li>
-          <li>Built modular health check framework adopted as standard practice by operations</li>
+          <li>Wrote manual test cases and performed functional testing, then automated website validation and infrastructure health checks</li>
+          <li>Migrated legacy Visual Basic scripts to PowerShell, removing about 10 hours of weekly manual effort</li>
+          <li>Built a modular PowerShell health-check framework for the Solar and Pulsar web apps, adopted as standard practice by operations</li>
         </ul>
         <div class="t-tags">
-          <span class="t-tag">PowerShell</span><span class="t-tag">Automation</span><span class="t-tag">Infrastructure</span>
+          <span class="t-tag">PowerShell</span><span class="t-tag">Test Automation</span><span class="t-tag">Infrastructure</span>
         </div>
       </div>
     </div>
@@ -432,89 +406,70 @@
   <p class="section-tag">// projects</p>
   <h2>What I've <span>built</span></h2>
 
-  <!-- Completed QA Projects -->
-  <div style="margin-bottom: 48px;">
-    <p style="font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px;">Completed QA & Automation</p>
-    <div class="projects-grid">
-      <a href="#" class="project-card">
-        <div class="proj-meta">
-          <span class="proj-type">🚀 Framework Migration</span>
-          <span class="proj-status completed">Completed</span>
-        </div>
-        <div class="proj-title">PayNet: Robot Framework → Pytest Migration</div>
-        <div class="proj-desc">Led migration of legacy Robot Framework suite to Pytest for EMVCo ISO flows (AReq, ARes, RReq, RRes). New suite runs 30% faster with full CI/CD integration.</div>
-        <div class="t-tags"><span class="t-tag">Pytest</span><span class="t-tag">API Testing</span><span class="t-tag">GitLab CI</span><span class="t-tag">EMVCo</span></div>
-      </a>
-      <a href="#" class="project-card">
-        <div class="proj-meta">
-          <span class="proj-type">⚙️ Infrastructure Automation</span>
-          <span class="proj-status completed">Completed</span>
-        </div>
-        <div class="proj-title">Intel: Interface Health Check Automation</div>
-        <div class="proj-desc">Built modular PowerShell framework automating health checks for Solar & Pulsar web apps. Adopted as standard practice, eliminated ad‑hoc manual effort.</div>
-        <div class="t-tags"><span class="t-tag">PowerShell</span><span class="t-tag">CLI</span><span class="t-tag">Automation</span></div>
-      </a>
+  <div class="projects-grid">
+    <div class="project-card featured">
+      <div class="proj-meta">
+        <span class="proj-type">🏦 National Payment Switch Migration</span>
+        <span class="proj-status completed">Completed · Live</span>
+      </div>
+      <div class="proj-title">PayNet: NextSwitch Core Migration (MyDebit and SAN)</div>
+      <div class="proj-desc">Migration of national payment products from Base24 NS4 to PayNet's in-house NextSwitch. Wrote manual test cases to set baseline coverage, then built the API-based Pytest and Playwright automation suite and the JMeter performance scripts. MyDebit went live in 2025 after full validation. I led SAN automation across 500+ domestic transaction flows, and SAN went live successfully in August 2026.</div>
+      <div class="proj-stats">
+        <div class="proj-stat">500+ <span>SAN transaction flows</span></div>
+        <div class="proj-stat">12h → &lt;3h <span>regression run</span></div>
+        <div class="proj-stat">40% <span>less manual regression</span></div>
+      </div>
+      <div class="t-tags"><span class="t-tag">Pytest</span><span class="t-tag">Playwright</span><span class="t-tag">JMeter</span><span class="t-tag">ISO 8583</span><span class="t-tag">API Testing</span><span class="t-tag">Docker</span></div>
     </div>
-  </div>
-
-  <!-- AI Projects — All Completed -->
-  <div>
-    <p style="font-family: var(--mono); font-size: 11px; color: var(--accent2); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px;">AI Projects (Completed)</p>
-    <div class="projects-grid">
-      <a href="https://github.com/firdausaslamtm/rag-malaysia-travel-guide" target="_blank" class="project-card featured">
-        <div class="proj-meta">
-          <span class="proj-type">🇲🇾 RAG · LangChain · Ollama</span>
-          <span class="proj-status completed">✓ Completed</span>
-        </div>
-        <div class="proj-title">RAG Malaysia Travel Guide</div>
-        <div class="proj-desc">Fully local RAG chatbot for Malaysia travel information. Built with LangChain orchestration, Chroma vector store, and local LLM via Ollama (llama3). Ask about destinations, food, culture, and get grounded answers — no cloud API, runs entirely on your machine.</div>
-        <div class="t-tags"><span class="t-tag">LangChain</span><span class="t-tag">Chroma</span><span class="t-tag">Ollama</span><span class="t-tag">RAG</span><span class="t-tag">Python</span></div>
-      </a>
-      <a href="https://github.com/firdausaslamtm/mcp-personal-assistant-server" target="_blank" class="project-card">
-        <div class="proj-meta">
-          <span class="proj-type">🛠️ MCP Server</span>
-          <span class="proj-status completed">✓ Completed</span>
-        </div>
-        <div class="proj-title">Local MCP server for personal assistant tools</div>
-        <div class="proj-desc">Local Model Context Protocol server providing time, weather, notes, and system info tools. Works with Claude Desktop and any MCP client for private assistant workflows.</div>
-        <div class="t-tags"><span class="t-tag">MCP</span><span class="t-tag">Claude</span><span class="t-tag">Python</span><span class="t-tag">Tools</span></div>
-      </a>
-      <a href="https://github.com/firdausaslamtm/llm-resume-tailor" target="_blank" class="project-card">
-        <div class="proj-meta">
-          <span class="proj-type">✍️ LLM App</span>
-          <span class="proj-status completed">✓ Completed</span>
-        </div>
-        <div class="proj-title">Tailor resumes and cover letters with local LLM via Ollama</div>
-        <div class="proj-desc">Private, truthful, ATS-friendly resume and cover letter tailoring to any job description using a local LLM via Ollama. No data leaves the machine.</div>
-        <div class="t-tags"><span class="t-tag">Ollama</span><span class="t-tag">LLM</span><span class="t-tag">Python</span><span class="t-tag">Privacy</span></div>
-      </a>
+    <div class="project-card">
+      <div class="proj-meta">
+        <span class="proj-type">🚀 Framework Migration</span>
+        <span class="proj-status completed">Completed</span>
+      </div>
+      <div class="proj-title">PayNet: Robot Framework → Pytest Migration</div>
+      <div class="proj-desc">Led the migration of the legacy Robot Framework suite to Pytest, owning the Card Not Present (CNP) authentication layer for EMVCo ISO message flows (AReq, ARes, RReq, RRes, PReq, PRes). Also built UI automation for the MyDebit Portal. The new suite runs 30% faster with CI/CD integration.</div>
+      <div class="t-tags"><span class="t-tag">Pytest</span><span class="t-tag">API Testing</span><span class="t-tag">UI Automation</span><span class="t-tag">GitLab CI</span><span class="t-tag">EMVCo</span></div>
     </div>
+    <div class="project-card">
+      <div class="proj-meta">
+        <span class="proj-type">⚙️ Infrastructure Automation</span>
+        <span class="proj-status completed">Completed</span>
+      </div>
+      <div class="proj-title">Intel: Interface Health Check Automation</div>
+      <div class="proj-desc">Built a modular PowerShell framework that automates health checks for the Solar and Pulsar web apps. Operations adopted it as standard practice, replacing ad-hoc manual checks with repeatable scripts.</div>
+      <div class="t-tags"><span class="t-tag">PowerShell</span><span class="t-tag">CLI</span><span class="t-tag">Automation</span></div>
+    </div>
+    <a href="https://github.com/firdausaslamtm/firdausaslamtm.github.io/tree/main/tests" target="_blank" class="project-card featured">
+      <div class="proj-meta">
+        <span class="proj-type">🧪 Public Code Sample</span>
+        <span class="proj-status completed">Open source</span>
+      </div>
+      <div class="proj-title">Playwright + Pytest test suite for this portfolio</div>
+      <div class="proj-desc">The test suite that checks this site, written with Pytest and Playwright: navigation, content, contact links and full-page validation. My PayNet work is confidential, so this is code you can read.</div>
+      <div class="t-tags"><span class="t-tag">Pytest</span><span class="t-tag">Playwright</span><span class="t-tag">Python</span></div>
+    </a>
   </div>
 </section>
 
-<!-- AI LEARNING RESOURCES -->
-<section id="ai-projects">
-  <p class="section-tag">// ai learning resources</p>
-  <h2>Curated <span>AI Repositories</span> to Learn From</h2>
-  <p style="color: var(--muted); margin-bottom: 24px; font-size: 14px;">
-    Hand‑picked public repositories from top creators to build AI engineering & QA skills.
-    All open‑source and free to explore on <a href="https://github.com" target="_blank" style="color: var(--accent);">GitHub</a>.
-  </p>
-  <div class="ai-repos-grid">
-    <a href="https://github.com/microsoft/ML-For-Beginners" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">🤖</span><div><div class="ai-repo-name">ML-For-Beginners (Microsoft)</div><div class="ai-repo-desc">12‑week curriculum with 26 lessons on classic machine learning</div><div class="ai-repo-tags"><span class="ai-tag">scikit-learn</span><span class="ai-tag">Python</span></div></div></a>
-    <a href="https://github.com/fastai/fastbook" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">🧠</span><div><div class="ai-repo-name">fastbook (fastai)</div><div class="ai-repo-desc">Jupyter notebooks for deep learning, using PyTorch & fastai</div><div class="ai-repo-tags"><span class="ai-tag">PyTorch</span><span class="ai-tag">fastai</span></div></div></a>
-    <a href="https://github.com/huggingface/transformers" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">📝</span><div><div class="ai-repo-name">Transformers (Hugging Face)</div><div class="ai-repo-desc">State‑of‑the‑art NLP: BERT, GPT, T5</div><div class="ai-repo-tags"><span class="ai-tag">Transformers</span><span class="ai-tag">PyTorch</span></div></div></a>
-    <a href="https://github.com/microsoft/AI-For-Beginners" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">⚡</span><div><div class="ai-repo-name">AI-For-Beginners (Microsoft)</div><div class="ai-repo-desc">12‑week curriculum covering neural nets, vision, NLP, & ethics</div><div class="ai-repo-tags"><span class="ai-tag">TensorFlow</span><span class="ai-tag">PyTorch</span></div></div></a>
-    <a href="https://github.com/langchain-ai/langchain" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">🔍</span><div><div class="ai-repo-name">LangChain</div><div class="ai-repo-desc">Building RAG apps, chains, and agents with LLMs</div><div class="ai-repo-tags"><span class="ai-tag">RAG</span><span class="ai-tag">LangChain</span></div></div></a>
-    <a href="https://github.com/mlabonne/llm-course" target="_blank" class="ai-repo-card"><span class="ai-repo-icon">💬</span><div><div class="ai-repo-name">LLM Course (mlabonne)</div><div class="ai-repo-desc">Complete course to master Large Language Models</div><div class="ai-repo-tags"><span class="ai-tag">LLM</span><span class="ai-tag">Prompt Engineering</span></div></div></a>
-  </div>
-</section>
-
-<!-- SKILLS — AI Engineering set to Hands-on (Neon Orange) -->
+<!-- SKILLS -->
 <section id="skills">
   <p class="section-tag">// skills</p>
   <h2>My <span>toolkit</span></h2>
   <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Test Automation</div>
+      <div class="skill-item">Pytest <span class="skill-level lvl-expert">Expert</span></div>
+      <div class="skill-item">Postman / API Testing <span class="skill-level lvl-expert">Expert</span></div>
+      <div class="skill-item">Robot Framework <span class="skill-level lvl-intermediate">Intermediate</span></div>
+      <div class="skill-item">Playwright <span class="skill-level lvl-intermediate">Familiar</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Performance & Payments</div>
+      <div class="skill-item">JMeter <span class="skill-level lvl-advanced">Advanced</span></div>
+      <div class="skill-item">Load / Soak / Stress Testing <span class="skill-level lvl-advanced">Advanced</span></div>
+      <div class="skill-item">ISO 8583 <span class="skill-level lvl-expert">Expert</span></div>
+      <div class="skill-item">EMVCo Message Flows <span class="skill-level lvl-advanced">Advanced</span></div>
+    </div>
     <div class="skill-group">
       <div class="skill-group-title">Manual Testing</div>
       <div class="skill-item">Test Case Design <span class="skill-level lvl-expert">Expert</span></div>
@@ -523,107 +478,67 @@
       <div class="skill-item">Test Planning <span class="skill-level lvl-intermediate">Intermediate</span></div>
     </div>
     <div class="skill-group">
-      <div class="skill-group-title">Test Automation</div>
-      <div class="skill-item">Pytest <span class="skill-level lvl-expert">Expert</span></div>
-      <div class="skill-item">Robot Framework <span class="skill-level lvl-intermediate">Intermediate</span></div>
-      <div class="skill-item">Postman / API Testing <span class="skill-level lvl-expert">Expert</span></div>
-      <div class="skill-item">DeepEval / RAGAS <span class="skill-level lvl-learning">Learning</span></div>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">AI Engineering</div>
-      <div class="skill-item">LangChain <span class="skill-level lvl-hands-on">Hands-on</span></div>
-      <div class="skill-item">Chroma / Vector DB <span class="skill-level lvl-hands-on">Hands-on</span></div>
-      <div class="skill-item">Ollama / Local LLM <span class="skill-level lvl-hands-on">Hands-on</span></div>
-      <div class="skill-item">MCP Server <span class="skill-level lvl-hands-on">Hands-on</span></div>
-      <div class="skill-item">RAG Pipelines <span class="skill-level lvl-hands-on">Hands-on</span></div>
-    </div>
-    <div class="skill-group">
       <div class="skill-group-title">Languages & DevOps</div>
       <div class="skill-item">Python <span class="skill-level lvl-expert">Expert</span></div>
       <div class="skill-item">Docker <span class="skill-level lvl-advanced">Advanced</span></div>
       <div class="skill-item">Jenkins / GitLab CI <span class="skill-level lvl-advanced">Advanced</span></div>
       <div class="skill-item">Linux / Bash <span class="skill-level lvl-advanced">Advanced</span></div>
-      <div class="skill-item">ISO 8583 <span class="skill-level lvl-expert">Expert</span></div>
     </div>
   </div>
+  <p class="skills-also"><strong>Also work with:</strong> Java, SQL (MySQL, Oracle), PowerShell, REST and SOAP APIs, Git, Kibana, Grafana, Jira, Confluence, TestRail, server-side debugging on Linux.</p>
 </section>
 
 <!-- EDUCATION & CERTIFICATIONS -->
 <section id="education">
   <p class="section-tag">// education & certifications</p>
-  <h2>What I've <span>learned</span></h2>
+  <h2>Education & <span>certifications</span></h2>
   <div style="display: flex; flex-wrap: wrap; gap: 20px;">
     <div class="project-card" style="flex: 1 1 280px;"><h3 style="font-size:1.2rem; margin-bottom:8px;">🎓 BSc (Hons) Netcentric Computing</h3><p style="color:var(--muted); font-size:0.9rem;">Universiti Teknologi MARA (UiTM), Jasin, Melaka · Graduated 2022</p><p style="font-size:0.85rem; color:var(--accent); margin-top:8px;">🏆 Best Project & Best Presenter (FYP 2021)</p></div>
-    <div class="project-card" style="flex: 1 1 280px;"><h3 style="font-size:1.2rem; margin-bottom:8px;">📜 ISTQB Certified Tester (CTFL)</h3><p style="color:var(--muted); font-size:0.9rem;">Foundation Level</p><a href="#" target="_blank" style="color:var(--accent); font-size:0.9rem; display:inline-block; margin-top:8px;">View Badge ↗</a></div>
+    <div class="project-card" style="flex: 1 1 280px;"><h3 style="font-size:1.2rem; margin-bottom:8px;">📜 ISTQB Certified Tester (CTFL)</h3><p style="color:var(--muted); font-size:0.9rem;">Foundation Level</p></div>
+    <div class="project-card" style="flex: 1 1 280px;"><h3 style="font-size:1.2rem; margin-bottom:8px;">🐍 Python Certificates</h3><p style="color:var(--muted); font-size:0.9rem;">Intermediate Python · Introduction to Data Science in Python · Introduction to Network Analysis in Python · Introduction to Data Visualization with Bokeh</p></div>
   </div>
 </section>
 
 <!-- ROADMAP -->
 <section id="roadmap">
-  <p class="section-tag">// learning roadmap</p>
-  <h2>Path to <span>AI Engineer & AI QA Expert</span></h2>
+  <p class="section-tag">// career roadmap</p>
+  <h2>Where I'm <span>heading</span></h2>
   <div class="roadmap">
     <div class="road-item">
       <div class="road-phase">Phase 1 <span class="completed-pill" style="margin-top: 6px; display: inline-block;">✓ Done</span></div>
       <div>
-        <div class="road-title">RAG + MCP + Local LLM Fundamentals</div>
-        <div class="road-desc">Built end-to-end local AI stack: RAG chatbot (LangChain + Chroma + Ollama), MCP server for assistant tools, and privacy-first resume tailor. Mastered retrieval, embeddings, tool use, and prompt engineering.</div>
-        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/rag-malaysia-travel-guide" target="_blank">rag-malaysia-travel-guide</a> · <a href="https://github.com/firdausaslamtm/mcp-personal-assistant-server" target="_blank">mcp-server</a> · <a href="https://github.com/firdausaslamtm/llm-resume-tailor" target="_blank">resume-tailor</a></div>
+        <div class="road-title">Automation for national payment go-lives</div>
+        <div class="road-desc">Built and led test automation for two national payment products on PayNet's NextSwitch, from manual baseline to automated regression and performance testing.</div>
+        <div class="road-subitems">
+          <div class="road-subitem"><span class="dot"></span> MyDebit: Pytest and Playwright suite, live in 2025</div>
+          <div class="road-subitem"><span class="dot"></span> SAN: 500+ domestic transaction flows validated, live in August 2026</div>
+          <div class="road-subitem"><span class="dot"></span> Robot Framework to Pytest migration, 30% faster runs with CI/CD</div>
+          <div class="road-subitem"><span class="dot"></span> Regression runs cut from 12 hours to under 3</div>
+        </div>
       </div>
     </div>
     <div class="road-item">
-      <div class="road-phase">Phase 2 <span class="in-progress-pill" style="margin-top: 6px; display: inline-block;">In Progress</span></div>
+      <div class="road-phase">Phase 2 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Next</span></div>
       <div>
-        <div class="road-title">Machine Learning & Deep Learning Foundations</div>
-        <div class="road-desc">Building strong foundations in ML algorithms, neural networks, and model evaluation. Moving from "using LLMs" to "understanding how they work under the hood."</div>
-        <div class="road-subitems">
-          <div class="road-subitem"><span class="dot"></span> Linear regression, decision trees, SVM, clustering — hands-on with scikit-learn</div>
-          <div class="road-subitem"><span class="dot"></span> Neural networks from scratch: backpropagation, activation functions, optimizers</div>
-          <div class="road-subitem"><span class="dot"></span> CNNs for image classification (MNIST → CIFAR-10 → custom datasets)</div>
-          <div class="road-subitem"><span class="dot"></span> Transformers architecture: attention, positional encoding, self-attention mechanics</div>
-        </div>
-        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/Machine-Learning" target="_blank">Machine-Learning</a> · <a href="https://github.com/firdausaslamtm/Deep-Learning" target="_blank">Deep-Learning</a></div>
+        <div class="road-title">ISTQB Advanced: Test Automation Engineering</div>
+        <div class="road-desc">Formalising automation architecture and strategy: framework design, maintainability, reporting and CI/CD integration, building on what I already do at PayNet.</div>
+        <div class="road-deliverable">📜 ISTQB CTAL-TAE</div>
       </div>
     </div>
     <div class="road-item">
       <div class="road-phase">Phase 3 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Next</span></div>
       <div>
-        <div class="road-title">LLM Evaluation & Quality Testing</div>
-        <div class="road-desc">Bridging QA background with AI — learning to systematically evaluate LLM outputs, measure RAG quality, and build test suites for generative AI systems.</div>
-        <div class="road-subitems">
-          <div class="road-subitem"><span class="dot"></span> RAGAS / DeepEval frameworks: faithfulness, answer relevance, context recall</div>
-          <div class="road-subitem"><span class="dot"></span> LLM-as-a-judge evaluation patterns (pairwise, pointwise, rubric-based)</div>
-          <div class="road-subitem"><span class="dot"></span> Hallucination detection and mitigation strategies</div>
-          <div class="road-subitem"><span class="dot"></span> Building test harnesses for RAG pipelines (unit tests for retrieval + generation)</div>
-        </div>
-        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/LLM-Evaluation" target="_blank">LLM-Evaluation</a> (planned)</div>
+        <div class="road-title">Performance Testing and AI testing basics</div>
+        <div class="road-desc">Adding formal performance testing credentials on top of hands-on JMeter work, and getting a grounding in how AI-based systems are tested.</div>
+        <div class="road-deliverable">📜 ISTQB CT-PT · ISTQB CT-AI</div>
       </div>
     </div>
     <div class="road-item">
-      <div class="road-phase">Phase 4 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Next</span></div>
+      <div class="road-phase">Phase 4 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Goal</span></div>
       <div>
-        <div class="road-title">MLOps & Quality Gates for AI Systems</div>
-        <div class="road-desc">Applying DevOps principles to ML/AI — building pipelines that validate models before deployment, monitor drift, and ensure safety/quality in production.</div>
-        <div class="road-subitems">
-          <div class="road-subitem"><span class="dot"></span> Model versioning with DVC / MLflow</div>
-          <div class="road-subitem"><span class="dot"></span> Automated retraining pipelines (GitLab CI + Kubeflow / Flyte)</div>
-          <div class="road-subitem"><span class="dot"></span> Model drift detection (data drift, concept drift, prediction distribution)</div>
-          <div class="road-subitem"><span class="dot"></span> Quality gates: accuracy thresholds, fairness checks, safety classifiers</div>
-        </div>
-        <div class="road-deliverable">📁 <a href="https://github.com/firdausaslamtm/MLOps-Quality" target="_blank">MLOps-Quality</a> (planned)</div>
-      </div>
-    </div>
-    <div class="road-item">
-      <div class="road-phase">Phase 5 <span class="coming-soon-pill" style="margin-top: 6px; display: inline-block;">Goal</span></div>
-      <div>
-        <div class="road-title">Flagship AI Test Platform + Certifications</div>
-        <div class="road-desc">Open-source platform that combines LLM evaluation, MLOps quality gates, and safety testing for generative AI. Plus formal certifications to validate expertise.</div>
-        <div class="road-subitems">
-          <div class="road-subitem"><span class="dot"></span> 🎯 Build: AI Test Platform (evaluation harness + drift monitor + safety checker)</div>
-          <div class="road-subitem"><span class="dot"></span> 📜 AWS ML Specialty or Google Professional ML Engineer</div>
-          <div class="road-subitem"><span class="dot"></span> 📜 ISTQB AI Testing (certification for AI quality engineering)</div>
-        </div>
-        <div class="road-deliverable">🎯 Ready for AI QA Engineer / AI Engineer roles</div>
+        <div class="road-title">Next role</div>
+        <div class="road-desc">A permanent role in QA automation, SDET or performance testing on high-volume systems, in Malaysia or the Middle East.</div>
+        <div class="road-deliverable">🎯 QA Automation Engineer · SDET · Performance Test Engineer</div>
       </div>
     </div>
   </div>
@@ -642,7 +557,7 @@
 </section>
 
 <footer>
-  built by ahmad firdaus aslam · building toward AI Engineer & AI QA Engineer · 2026
+  built by ahmad firdaus aslam · QA Automation Engineer · Kuala Lumpur, Malaysia · 2026
 </footer>
 
 </body>
